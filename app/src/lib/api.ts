@@ -10,7 +10,7 @@ import { uuid } from './uuid'
 
 import { logError } from '../lib/logging/renderer'
 
-const Octokat = require('octokat')
+const Octokat = require('@shiftkey/octokat')
 const username: () => Promise<string> = require('username')
 
 const ClientID = process.env.TEST_ENV ? '' : __OAUTH_CLIENT_ID__
@@ -38,17 +38,17 @@ const NoteURL = 'https://desktop.github.com/'
  * Both take a _lot_ of time in post-processing and are unnecessary.
  */
 const OctokatPlugins = [
-  require('octokat/dist/node/plugins/object-chainer'),
-  require('octokat/dist/node/plugins/path-validator'),
-  require('octokat/dist/node/plugins/authorization'),
-  require('octokat/dist/node/plugins/preview-apis'),
-  require('octokat/dist/node/plugins/use-post-instead-of-patch'),
+  require('@shiftkey/octokat/dist/node/plugins/object-chainer'),
+  require('@shiftkey/octokat/dist/node/plugins/path-validator'),
+  require('@shiftkey/octokat/dist/node/plugins/authorization'),
+  require('@shiftkey/octokat/dist/node/plugins/preview-apis'),
+  require('@shiftkey/octokat/dist/node/plugins/use-post-instead-of-patch'),
 
-  require('octokat/dist/node/plugins/simple-verbs'),
-  require('octokat/dist/node/plugins/fetch-all'),
+  require('@shiftkey/octokat/dist/node/plugins/simple-verbs'),
+  require('@shiftkey/octokat/dist/node/plugins/fetch-all'),
 
-  require('octokat/dist/node/plugins/read-binary'),
-  require('octokat/dist/node/plugins/pagination'),
+  require('@shiftkey/octokat/dist/node/plugins/read-binary'),
+  require('@shiftkey/octokat/dist/node/plugins/pagination'),
 ]
 
 /**
